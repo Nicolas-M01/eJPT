@@ -88,7 +88,7 @@ use 4
 ```
 ➡️ Ici "4" est le chiffre raccourci du nom du module (auxiliaire)  
 
-![alt text](image.png)
+![alt text](Images/image.png)
 
 **Afficher options du module choisi et les modifier**  
 ```bash
