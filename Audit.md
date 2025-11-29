@@ -1,0 +1,10 @@
+
+
+
+| Terme                      | Définition                                                                                                                                                      | Importance                                                                                             |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Politiques de Sécurité** | Documents officiels qui définissent les objectifs, lignes directrices et procédures de sécurité d’une organisation afin de protéger les actifs informationnels. | Établissent le cadre pour la mise en œuvre et l’application des contrôles de sécurité.                 |
+| **Conformité**             | Respect des exigences réglementaires, des normes industrielles et des politiques internes liées à la sécurité et à la protection des données.                   | Garantit que l’organisation respecte ses obligations légales et les meilleures pratiques.              |
+| **Vulnérabilité**          | Une faiblesse dans un système ou un processus pouvant être exploitée pour obtenir un accès non autorisé ou causer des dommages.                                 | L’identification des vulnérabilités est essentielle pour évaluer et améliorer les mesures de sécurité. |
+| **Contrôle**               | Une mesure de protection ou de contre-mesure mise en place pour atténuer les risques et protéger les actifs informationnels.                                    | Les contrôles sont conçus pour prévenir, détecter ou répondre aux menaces et faiblesses de sécurité.   |
+| **Évaluation des Risques** | Processus d’identification, d’analyse et d’évaluation des risques pesant sur les actifs informationnels d’une organisation.                                     | Aide à prioriser les mesures de sécurité selon la probabilité et l’impact des risques identifiés.      |
