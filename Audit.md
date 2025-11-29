@@ -9,6 +9,7 @@
 | **Contrôle**               | Une mesure de protection ou de contre-mesure mise en place pour atténuer les risques et protéger les actifs informationnels.                                    | Les contrôles sont conçus pour prévenir, détecter ou répondre aux menaces et faiblesses de sécurité.   |
 | **Évaluation des Risques** | Processus d’identification, d’analyse et d’évaluation des risques pesant sur les actifs informationnels d’une organisation.                                     | Aide à prioriser les mesures de sécurité selon la probabilité et l’impact des risques identifiés.      |
 
+---
 
 ### Processus d'audit de sécurité  
 1) **Planification et préparation**  
