@@ -22,3 +22,7 @@ Se connecter à un SMB client qui autorise la connection anonyme sans mot de pas
 Obtenir des infos sur les partages SMB.  
 `enum4linux IP_ADDRESS`
 `-s` : Afficher une wordlist de partages.  
+
+
+# Gobuster
+`gobuster dir -u http://target.ine.local -w /usr/share/wordlists/dirb/common.txt`  
