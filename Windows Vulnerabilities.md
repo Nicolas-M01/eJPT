@@ -45,4 +45,7 @@ Une fois connecté, tu peux utiliser des commandes simples, comme :
 
 `put /usr/share/webshells/asp/webshell.asp` permet l'upload d'un webshell.  
 
-Une fois la backdoor (webshell installée), on peut se reconnecter depuis le site web, s'authentifier sur le seerveur WebDAV puis nous lançons le webshell.  
+Une fois la backdoor (webshell installée), on peut se reconnecter depuis le site web, s'authentifier sur le serveur WebDAV puis nous lançons le webshell.  
+
+il suffit de taper `dir c:\` pour lister la racine, puis `type flag.txt` pour lire le flag.  
+
