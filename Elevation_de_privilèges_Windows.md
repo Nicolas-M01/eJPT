@@ -55,7 +55,7 @@ run
 * Envoyer Aakgi64 sur machine cible : `upload /root/Desktop/tools/UACME/Akagi64.exe`  
 * Retourner sur le meterpreter, lancer `shell`, puis `Akagi64.exe 23 C:\Temp\backdoor.exe` (Akagi outil connu pour exploiter des techniques de bypass UAC sur Windows). "23" est l'ID de la méthode à lancer (elle dépend de la version de Windows à exploiter).    
 * Un meterpreter s'ouvre sur la machine en écoute et nous obtenons les droits Admin (on peut vérifier avec `getprivs`).  
-* `ps` pour regarder les processus actifs, puis migrer vers le processus de **lsass.exe**, puis `hasdump` pour récupérer les hashes.
+* `ps` pour regarder les processus actifs, puis migrer vers le processus de **lsass.exe**, puis `hashdump` pour récupérer les hashes.
 
 
 
