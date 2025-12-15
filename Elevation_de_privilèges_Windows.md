@@ -63,5 +63,54 @@ run
 Contient une liste de méthodes utilisées pour bypasser UAC sur les Windows de 7 à 10.  
 
 
+### Windows Access Token
+Les tokens sont au coeur de l'authentification sur Windows. Ils sont créés et gérés par le Local Authority Subsystem Service (LSASS).  
+Les tokens permettent d'éviter se connecter chaque fois que l'on veut avoir accès à une ressource ou qu'un processus démarre.  
+Les tokens sont générés par winlogon.exe processus à chaque authentification réussie. Le token est ensuite attaché au userinit.exe, après quoi tous les processus démarré par le user héritent d'une copie de la clé d'accès de leur créateur. Ces processus tourneront avec les privilèges de cette clé d'accès.  
 
+Les access tokens Windows ont des niveaux de sécurité. Ces niveaux déterminent jusqu’où un token peut être utilisé.  
+
+Les deux niveaux clés sont :  
+* Impersonation  
+* Delegation  
+
+🔹 **Impersonation level**  
+Le processus serveur peut agir comme l’utilisateur uniquement sur la machine locale.  
+Impossible d’utiliser ce token pour accéder à d’autres machines.  
+Typiquement utilisé par :  
+Services Windows  
+Applications serveur locales  
+👉 Pas de propagation d’identité sur le réseau  
+
+🔹 **Delegation level**  
+Le serveur peut agir comme l’utilisateur localement ET sur des systèmes distants.  
+Le token peut être présenté à d’autres machines (ex. accès à un partage réseau).  
+Nécessite en pratique :   
+Kerberos  
+Une configuration explicite de la délégation (AD)  
+👉 Très puissant, donc très sensible  
+
+
+L’élévation de privilèges par impersonation dépend :  
+
+* du compte compromis au départ  
+* des privilèges Windows qu’il possède  
+* du type de token disponible (impersonation / delegation)  
+
+
+SeImpersonatePrivilege → impersonation locale (le plus exploité)  
+SeAssignPrimaryTokenPrivilege → gestion de processus (cas spécifiques)  
+SeCreateTokenPrivilege → pouvoir absolu (rare, quasi inutile à mentionner)  
+
+
+## Incognito 
+Outil avec meterpreter intégré permettant d'imiter des tokens utilisateurs après une exploitation réussie.  
+
+### Démo avec Metasploit / Incognito  
+Démarrer Metasploit, puis `search rejetto`, lancer l'exploit, paramétrer la cible puis `exploit`  
+`pgrep explorer`, puis `migrate <PID>`, nous obtenons un "Access denied" parce que nous sommes avec user à droits restreints, on peut le vérifier avec `getuid`, puis `getprivs`, on voit le **SeImpersonatePrivilege**, que nous allons exploiter.  
+Relancer l'exploit avec rejetto (sinon Incognito ne démarrera pas avec cause de la migration de PID).  
+`load incognito`, `list_tokens -u` nous permet d'avoir la liste des tokens users.  
+Nous avons le compte *Administrator* et le compte *local service* en Delegation. Nous allons migrer le compte *Administrator* en Impersonate : `impersonate_token "ATTACKDEFENSE\Administrator"`  
+`getuid`, `pgrep explorer`, `migrate <PID>`, `getprivs` on voit qu'on a plein de privilèges.  
 
