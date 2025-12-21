@@ -26,6 +26,7 @@ LM a été arrêté utilise les hashes NTLM depuis VISTA.
 * LM est très faible en sécurité : absence de sel (salt), découpage prévisible et DES rendent les mots de passe faciles à casser par force brute ou tables arc-en-ciel.  
 👉 En bref : LM est obsolète et dangereux, raison pour laquelle il est désactivé sur les systèmes Windows modernes.  
 
+
 ## NTLM (NTHash) 
 * NTLM (NTHash) est un ensemble de protocoles d’authentification utilisés par Windows pour vérifier l’identité des utilisateurs entre machines.  
 * À partir de Windows Vista, le hachage LM est désactivé au profit de NTLM.  
@@ -35,4 +36,14 @@ LM a été arrêté utilise les hashes NTLM depuis VISTA.
   * est sensible à la casse,  
   * supporte les symboles et caractères Unicode.  
 👉 En bref : NTLM est plus sécurisé que LM, mais reste aujourd’hui moins robuste que les mécanismes modernes (ex. Kerberos).  
+
+--- 
+
+## Mimikatz  
+Outil post-exploitation. Il permet l'extraction de passwords en texte clair, de hases, et de tickets Kerberos. SAM est la DB où sont stockés les hashes de passwords.  
+Mimikatz peut extraire les hashes de lsass.exe où se trouvent les hashes.  
+
+
+
+
 
