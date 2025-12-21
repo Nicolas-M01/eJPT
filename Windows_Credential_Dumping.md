@@ -47,3 +47,20 @@ Mimikatz peut extraire les hashes de lsass.exe où se trouvent les hashes.
 
 
 
+## Pass The Hash Attack avec Kiwi (intégré à Metasploit)
+Contexte : Nous avons une cible Windows vulnérable à BadBlue 2.7.
+### 👉 Scan de la cible et on voit BadBlue 2.7  
+![alt text](<Images/Capture d'écran 2025-12-21 174841.png>)
+
+### 👉 On lance le module Metasploit qui exploit cette vuln BadBlue 2.7
+On paramètre la cible et on obtient le meterpreter  
+![alt text](<Images/Capture d'écran 2025-12-21 175340.png>)
+
+### 👉 Migration vers lsass puis lancement de kiwi
+![alt text](<Images/Capture d'écran 2025-12-21 175606.png>)
+
+### 👉 Récupération des Hashes avec `lsa_dump_sam`
+![alt text](<Images/Capture d'écran 2025-12-21 180105.png>)
+
+### 👉 Récupération des Hashes LM et Hashes NTLM de tous les users avec `hashdump`  
+![alt text](<Images/Capture d'écran 2025-12-21 180308.png>)

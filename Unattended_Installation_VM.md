@@ -40,3 +40,14 @@ Cette commande nous permet d'avoir accès à la machine victime, pour ensuite tr
 #### 👉 Démarrer Metasploit  
 ![alt text](<Images/Capture d'écran 2025-12-21 152753.png>)
 
+
+#### 👉 multi/handler est un module Metasploit qui sert à recevoir des connexions de payloads (reverse shell, Meterpreter, etc.).
+Il reçoit la connexion d'un payload généré avec msfvenom:  
+![alt text](<Images/Capture d'écran 2025-12-21 153415.png>)  
+
+#### 👉 Lancement du Reverse meterpreter Shell  
+![alt text](<Images/Capture d'écran 2025-12-21 154629.png>)
+
+
+#### 👉 Lancement du "payload.exe" sur La Windows cible  
+....  
