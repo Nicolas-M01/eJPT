@@ -64,3 +64,15 @@ On paramètre la cible et on obtient le meterpreter
 
 ### 👉 Récupération des Hashes LM et Hashes NTLM de tous les users avec `hashdump`  
 ![alt text](<Images/Capture d'écran 2025-12-21 180308.png>)
+
+### 👉 Lancement de `psexec`  
+`ctrl+z` pour mettre la sessionen background, puis `search psexec`, puis choisir `exploit/windows/smb/psexec`  
+
+### Config de `psexec`
+Suivre la procédure comme ci dessous et on devrait obtenir un meterpreter (Bien copier hash LM+NTLM)  
+![alt text](<Images/Capture d'écran 2025-12-22 190740.png>)
+
+
+### ❗Alternative sans Metasploit :S'identifier sur la cible avec `crackmapexec`
+![alt text](<Images/Capture d'écran 2025-12-22 192217.png>)
+![alt text](<Images/Capture d'écran 2025-12-22 192235.png>)
