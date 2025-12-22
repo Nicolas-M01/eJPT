@@ -66,7 +66,7 @@ On paramètre la cible et on obtient le meterpreter
 ![alt text](<Images/Capture d'écran 2025-12-21 180308.png>)
 
 ### 👉 Lancement de `psexec`  
-`ctrl+z` pour mettre la sessionen background, puis `search psexec`, puis choisir `exploit/windows/smb/psexec`  
+Toujours dans Metasploit `ctrl+z` pour mettre la sessionen background, puis `search psexec`, puis choisir `exploit/windows/smb/psexec`  
 
 ### Config de `psexec`
 Suivre la procédure comme ci dessous et on devrait obtenir un meterpreter (Bien copier hash LM+NTLM)  
