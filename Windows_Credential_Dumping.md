@@ -43,11 +43,33 @@ LM a été arrêté utilise les hashes NTLM depuis VISTA.
 Outil post-exploitation. Il permet l'extraction de passwords en texte clair, de hases, et de tickets Kerberos. SAM est la DB où sont stockés les hashes de passwords.  
 Mimikatz peut extraire les hashes de lsass.exe où se trouvent les hashes.  
 
+## Pass The Hash Attack avec Mimikatz
+### 👉 Après scan et identification vul BadBlue 2.7
+![alt text](<Images/Capture d'écran 2025-12-22 194313.png>)
+
+### 👉 Lancer le module, vérifier, migrer vers lsass...
+![alt text](<Images/Capture d'écran 2025-12-22 194745.png>)
+
+### 👉 Kiwi module (Metasploit)
+**Dump des hashes NTLM**
+![alt text](<Images/Capture d'écran 2025-12-22 195055.png>)
+**Dump des secrets** Dans certains cas on peut obtenir un mot de passe en clair texte.  
+![alt text](<Images/Capture d'écran 2025-12-22 195107.png>)
+
+### 👉 Upload de `mimikatz` sur cible 
+![alt text](<Images/Capture d'écran 2025-12-22 195539.png>)
+
+### 👉 Lancement de `mimikatz et dumpe des hashes`
+![alt text](<Images/Capture d'écran 2025-12-22 195904.png>)
+
+### 👉 dump des secrets puis récupération des passwords en clair si système mal configuré (pas dans notre cas présent)
+![alt text](<Images/Capture d'écran 2025-12-22 200336.png>)
+![alt text](<Images/Capture d'écran 2025-12-22 200350.png>)
 
 
+---
 
-
-## Pass The Hash Attack avec Kiwi (intégré à Metasploit)
+## Pass The Hash Attack avec Kiwi+PSexec et alternative Kiwi+crackmapexec (intégré à Metasploit)
 Contexte : Nous avons une cible Windows vulnérable à BadBlue 2.7.
 ### 👉 Scan de la cible et on voit BadBlue 2.7  
 ![alt text](<Images/Capture d'écran 2025-12-21 174841.png>)
