@@ -42,7 +42,8 @@ Outils conseillés :
 
 </details>
 
-### Phase d'Exploitation avec Hydra 
+
+### Flag 1
 
 #### Attaque avec hydra pour se connecter au site Web
 :bulb: On sait que l'identifiant est "bob" et le mot de passe est faible
@@ -52,9 +53,37 @@ Outils conseillés :
 >🟢**Password : password_123321**
 
 
-
-
 #### Lancement de `davtest`  
 >:bulb: Rappel : davtest permet de s'authentifier sur un service WebDAV et de vérifier si >on peut uploader des fichiers et de quels types, mais aussi les droits (exécutés >ou lecture uniquement).
-``
+`davtest -auth bob:password_123321 -url http://target1.ine.local/webdav` permet de se connecter :  
+
+![alt text](<../Images/Capture d'écran 2025-12-26 220808.png>)
+
+>:bulb: **Les fichiers .asp peuvent s'exécuter, nous allons pouvoir lancer cadaver >pour uploader un webshell.**  
+
+#### Lancement de `cadaver`  
+![alt text](<../Images/Capture d'écran 2025-12-26 221311.png>)
+
+**On est loggé et un webshell est uploadé, on peut se connecter depuis l'interface web**
+![alt text](<../Images/Capture d'écran 2025-12-26 221416.png>)
+![alt text](<../Images/Capture d'écran 2025-12-26 221727.png>)
+
+**FLAG 1 trouvé !!!**  
+
+---
+
+## Flag2
+
+### Lancement du Webshell
+
+![alt text](image.png)
+
+:gear: **Il nous plus qu'à aller à la racine C:\ pur récupérer le flag2.**  
+
+`dir C:\` nous permet de voir l'emplacement du flag, donc `type C:\flag2.txt`
+![alt text](<../Images/Capture d'écran 2025-12-26 222947.png>)
+
+**FLAG 2 trouvé !!!**
+
+---
 
