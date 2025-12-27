@@ -42,8 +42,10 @@ Outils conseillés :
 
 </details>
 
+--- 
 
-### Flag 1
+<details>
+<summary><h3>:arrow_forward:Flag 1<h3></summary>
 
 #### Attaque avec hydra pour se connecter au site Web
 :bulb: On sait que l'identifiant est "bob" et le mot de passe est faible
@@ -75,6 +77,8 @@ On voit qu'il contient bien une page "WebDAV"
 ![alt text](<../Images/Capture d'écran 2025-12-27 134334.png>)
 
 **FLAG 1 trouvé !!!**  
+</details>
+
 
 ---
 
