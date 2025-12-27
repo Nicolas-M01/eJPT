@@ -52,9 +52,12 @@ Outils conseillés :
 >🟢**User : bob**
 >🟢**Password : password_123321**
 
+#### Enumération du site avec `dirb`
+On voit qu'il contient bien une page "WebDAV"
+![alt text](<../Images/Capture d'écran 2025-12-27 134026.png>)
 
 #### Lancement de `davtest`  
->:bulb: Rappel : davtest permet de s'authentifier sur un service WebDAV et de vérifier si >on peut uploader des fichiers et de quels types, mais aussi les droits (exécutés >ou lecture uniquement).
+>:bulb: Rappel : davtest permet de s'authentifier sur un service WebDAV et de vérifier si on peut uploader des fichiers et de quels types, mais aussi les droits (exécutés >ou lecture uniquement).
 `davtest -auth bob:password_123321 -url http://target1.ine.local/webdav` permet de se connecter :  
 
 ![alt text](<../Images/Capture d'écran 2025-12-26 220808.png>)
@@ -68,6 +71,9 @@ Outils conseillés :
 ![alt text](<../Images/Capture d'écran 2025-12-26 221416.png>)
 ![alt text](<../Images/Capture d'écran 2025-12-26 221727.png>)
 
+:bulb: **Alternative pour afficher le flag1.txt**  
+![alt text](<../Images/Capture d'écran 2025-12-27 134334.png>)
+
 **FLAG 1 trouvé !!!**  
 
 ---
@@ -76,9 +82,9 @@ Outils conseillés :
 
 ### Lancement du Webshell
 
-![alt text](image.png)
+Images/Capture d'écran 2025-12-26 222607.png
 
-:gear: **Il nous plus qu'à aller à la racine C:\ pur récupérer le flag2.**  
+:gear: **Il nous reste plus qu'à aller à la racine C:\ pur récupérer le flag2.**  
 
 `dir C:\` nous permet de voir l'emplacement du flag, donc `type C:\flag2.txt`
 ![alt text](<../Images/Capture d'écran 2025-12-26 222947.png>)

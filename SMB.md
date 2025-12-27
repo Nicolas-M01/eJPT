@@ -20,7 +20,7 @@ Se connecter à un SMB client qui autorise la connection anonyme sans mot de pas
 
 ## Exploitation de la vulnérabilité SMB Windows MS17-010 (EternalBlue)
 * On peut notamment exploiter le protocole SMBv1:  
-Ex : `nmap -sV -p 445 --script=smb-vuln-ms17-01 -O 10.10.10.12` permet de scanner l'IP indiquée sur le port 445 avec la version du service et l'OS et de savoir si la cible est vulnérable à EternalBlue.  
+Ex : `nmap -sV -p 445 --script=smb-vuln-ms17-010 -O 10.10.10.12` permet de scanner l'IP indiquée sur le port 445 avec la version du service et l'OS et de savoir si la cible est vulnérable à EternalBlue.  
 
 * `exploit/windows/smb/ms17_010_eternalblue` : Renseigner les paramètres (LOHST, LPORT, RHOSTS). Puis `run`  
 Si l'exploit fonctionne, nous obtenons un meterpreter.  

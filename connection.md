@@ -1,4 +1,4 @@
-# Mysql  
+http# Mysql  
 `mysql -u <user> -p<password> -h <IP_TARGET>`  
 
 
@@ -7,6 +7,9 @@
 
 # HYDRA  
 `hydra [options] -L (ou -l) liste_users -P liste_mdp ftp://IP_ou_Domaine`  
+`hydra -L users.txt -P passwords.txt smb://target1.ine.local`
+`hydra -L users.txt -P passwords.txt rdp://target1.ine.local`
+`hydra -L users.txt -P passwords.txt target1.ine.local http-post-form \`
 
 -l = un seul nom d’utilisateur
 -L = un fichier contenant plusieurs noms d’utilisateur
