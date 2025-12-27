@@ -45,14 +45,14 @@ Outils conseillés :
 --- 
 
 <details>
-<summary><h3>:arrow_forward:Flag 1<h3></summary>
+<summary><h3>:arrow_forward:Flag 1 L'utilisateur « bob » n'a peut-être pas choisi un mot de passe robuste. Essayez des mots de passe courants. (target1.ine.local) <h3></summary>
 
 #### Attaque avec hydra pour se connecter au site Web
 :bulb: On sait que l'identifiant est "bob" et le mot de passe est faible
 ![alt text](<../Images/Capture d'écran 2025-12-26 215238.png>)
 
->🟢**User : bob**
->🟢**Password : password_123321**
+>🟢**User : bob**  
+>🟢**Password : password_123321**  
 
 #### Enumération du site avec `dirb`
 On voit qu'il contient bien une page "WebDAV"
@@ -82,7 +82,9 @@ On voit qu'il contient bien une page "WebDAV"
 
 ---
 
-## Flag2
+<details>
+
+<summary><h3> :arrow_forward: Flag2 Les fichiers importants se trouvent souvent sur le lecteur C:. Explorez-le minutieusement. (target1.ine.local)</summary><h3>
 
 ### Lancement du Webshell
 
@@ -94,6 +96,8 @@ Images/Capture d'écran 2025-12-26 222607.png
 ![alt text](<../Images/Capture d'écran 2025-12-26 222947.png>)
 
 **FLAG 2 trouvé !!!**
+</details>
+
 
 ---
 
