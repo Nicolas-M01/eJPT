@@ -146,6 +146,9 @@ Images/Capture d'écran 2025-12-26 222607.png
 
 :bulb: **Alternative** avec `exploit/windows/smb/psexec` flag4.txt  
 Se déplacer dans "Users>Administrator>Desktop"  
-![alt text](<../Images/Capture d'écran 2025-12-28 172915.png>)
+![alt text](<../Images/Capture d'écran 2025-12-28 172915.png>)  
+
 **Flag 4 PWNED!**
+
+
 </details>
