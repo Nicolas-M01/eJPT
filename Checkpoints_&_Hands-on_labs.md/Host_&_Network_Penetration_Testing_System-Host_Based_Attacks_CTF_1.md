@@ -111,7 +111,40 @@ Images/Capture d'écran 2025-12-26 222607.png
 :gear: Nous allons tenter de trouver les credentials SMB par Metasploit, on choisit le module
 ![alt text](<../Images/Capture d'écran 2025-12-28 161122.png>)
 
-:gear: paramétrage du module et récupération des comptes :
+:gear: paramétrage du module et récupération des comptes avec Metasploit:
 ![alt text](<../Images/Capture d'écran 2025-12-28 161649.png>)
 
+:bulb: **Alternative** : Récupération des credentials avec Hydra :
+![alt text](<../Images/Capture d'écran 2025-12-28 164512.png>)
+:gear: **Enumération des partages SMB**
+![alt text](<../Images/Capture d'écran 2025-12-28 163248.png>)
+
+:bulb: **Alternative** avec `crackmapexec` pour tester la connexion et enumérer les partages  
+![alt text](<../Images/Capture d'écran 2025-12-28 171907.png>)
+
+:gear: Connexion avec `smbclient` car nous avons les credentials et les partages (partage par défaut : C$)  
+![alt text](<../Images/Capture d'écran 2025-12-28 170622.png>)
+![alt text](<Capture d'écran 2025-12-28 170757.png>)
+
+:bulb: Alternative avec `psexec` sur Metasploit
+![alt text](<../Images/Capture d'écran 2025-12-28 170128.png>)
+![alt text](<../Images/Capture d'écran 2025-12-28 165650.png>)
+
+**Flag3 PWNED !**  
+
+</details>
+
+---
+
+<details>
+
+<summary><h3> :arrow_forward: Flag4 Le répertoire Bureau contient peut-être ce que vous cherchez. Parcourez son contenu. (target2.ine.local)</summary><h3> 
+
+❕Aller dans **Users>Administrator>Desktop** et récupérer le flag4.
+![alt text](<../Images/Capture d'écran 2025-12-28 172509.png>)
+
+:bulb: **Alternative** avec `exploit/windows/smb/psexec` flag4.txt**  
+Se déplacer dans "Users>Administrator>Desktop"
+![alt text](<../Images/Capture d'écran 2025-12-28 172915.png>)
+**Flag 4 PWNED!**
 </details>

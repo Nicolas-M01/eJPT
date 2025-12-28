@@ -21,6 +21,10 @@ Se connecter à un SMB client qui autorise la connection anonyme sans mot de pas
 `smbclient //IP_TARGET/MY_SHARE`
 `-N` si pas de mot de passe  
 
+`smbclient //SERVEUR/PARTAGE -U utilisateur` il nous demandera le mot de passe.
+
+
+
 # enum4linux
 Obtenir des infos sur les partages SMB.  
 `enum4linux IP_ADDRESS`
@@ -29,3 +33,11 @@ Obtenir des infos sur les partages SMB.
 
 # Gobuster
 `gobuster dir -u http://target.ine.local -w /usr/share/wordlists/dirb/common.txt`  
+
+
+# crackmapexec
+* `crackmapexec smb IP -u utilisateur -p motdepasse` Connexion  
+* `crackmapexec smb IP -u utilisateur -p motdepasse --shares` : lister les partages  
+* `crackmapexec smb IP -u utilisateur -p motdepasse -x "whoami"` Commandes distantes si admin.  
+* `crackmapexec smb 192.168.1.10 -u admin -H aad3b435b51404eeaad3b435b51404ee:5f4dcc3b5aa765d61d8327deb882cf99` Pass-the-hash (NTLM)  
+* 
