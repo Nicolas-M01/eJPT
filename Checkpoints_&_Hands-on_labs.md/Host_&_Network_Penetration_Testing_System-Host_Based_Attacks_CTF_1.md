@@ -69,11 +69,12 @@ On voit qu'il contient bien une page "WebDAV"
 #### Lancement de `cadaver`  
 ![alt text](<../Images/Capture d'écran 2025-12-26 221311.png>)
 
-**On est loggé et un webshell est uploadé, on peut se connecter depuis l'interface web**
-![alt text](<../Images/Capture d'écran 2025-12-26 221416.png>)
-![alt text](<../Images/Capture d'écran 2025-12-26 221727.png>)
+**On est loggé et un webshell est uploadé, on peut se connecter depuis l'interface web**  
+![alt text](<../Images/Capture d'écran 2025-12-26 221416.png>)  
+![alt text](<../Images/Capture d'écran 2025-12-26 221727.png>)  
 
 :bulb: **Alternative pour afficher le flag1.txt**  
+
 ![alt text](<../Images/Capture d'écran 2025-12-27 134334.png>)
 
 **FLAG 1 trouvé !!!**  
@@ -140,11 +141,11 @@ Images/Capture d'écran 2025-12-26 222607.png
 
 <summary><h3> :arrow_forward: Flag4 Le répertoire Bureau contient peut-être ce que vous cherchez. Parcourez son contenu. (target2.ine.local)</summary><h3> 
 
-❕Aller dans **Users>Administrator>Desktop** et récupérer le flag4.
-![alt text](<../Images/Capture d'écran 2025-12-28 172509.png>)
+❕Aller dans **Users>Administrator>Desktop** et récupérer le flag4.  
+![alt text](<../Images/Capture d'écran 2025-12-28 172509.png>)  
 
-:bulb: **Alternative** avec `exploit/windows/smb/psexec` flag4.txt**  
-Se déplacer dans "Users>Administrator>Desktop"
+:bulb: **Alternative** avec `exploit/windows/smb/psexec` flag4.txt  
+Se déplacer dans "Users>Administrator>Desktop"  
 ![alt text](<../Images/Capture d'écran 2025-12-28 172915.png>)
 **Flag 4 PWNED!**
 </details>
