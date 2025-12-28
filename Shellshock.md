@@ -15,6 +15,3 @@ Puis dans le repeater de Burp Suite :
 #### :bulb: Avec Metasploit et le ``module auxiliary(scanner/http/apache_mod_cgi_bash_env``  
 (Désactiver le proxy)
 Rentrer la cible avec RHOSTS, notre machine d'attaque avec son IP (et pas la loopback!), "puis TARGETURI /gettime.cgi", puis exploit...  
-
-# FTP
-

