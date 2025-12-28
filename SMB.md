@@ -14,8 +14,12 @@
 
 ## SMBCLIENT 
 Se connecter à un SMB client qui autorise la connection anonyme sans mot de passe.    
-`smbclient //IP_TARGET/MY_SHARE`
+* `smbclient //IP_TARGET/MY_SHARE`
 `-N` si pas de mot de passe  
+* `smbclient //SERVEUR/PARTAGE -U utilisateur` il nous demandera le mot de passe.  
+* `smbclient //SERVEUR/PARTAGE -U utilisateur%motdepasse`
+* `smbclient -L //SERVEUR -U utilisateur` Pour lister les partages grâce `-L`.  
+
 
 
 ## Exploitation de la vulnérabilité SMB Windows MS17-010 (EternalBlue)

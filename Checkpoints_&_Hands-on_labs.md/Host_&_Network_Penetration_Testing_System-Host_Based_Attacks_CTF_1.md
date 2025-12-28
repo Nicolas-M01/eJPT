@@ -98,6 +98,20 @@ Images/Capture d'écran 2025-12-26 222607.png
 **FLAG 2 trouvé !!!**
 </details>
 
-
 ---
 
+<details>
+
+<summary><h3> :arrow_forward: Flag3 Les partages SMB peuvent contenir des fichiers cachés. Vérifiez les partages disponibles. (target2.ine.local)</summary><h3>
+
+#### Enumération de "target2.ine.local"
+
+![alt text](<../Images/Capture d'écran 2025-12-28 160838.png>)
+
+:gear: Nous allons tenter de trouver les credentials SMB par Metasploit, on choisit le module
+![alt text](<../Images/Capture d'écran 2025-12-28 161122.png>)
+
+:gear: paramétrage du module et récupération des comptes :
+![alt text](<../Images/Capture d'écran 2025-12-28 161649.png>)
+
+</details>
