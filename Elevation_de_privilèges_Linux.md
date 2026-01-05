@@ -40,3 +40,19 @@ Lors de leur exécution, ces lignes ajouteront une nouvelle entrée au fichier /
 **Nous avons en effet les droits rooot...**  
 ![alt text](<Images/Capture d'écran 2026-01-04 220606.png>)
 
+
+## SUID  
+SUID : Set Owner User ID  
+Cette permission fournit à l'utilisateur le droit d'exécuter un script ou un binaire avec les permissions du propriétaire du fichier. On obtient une permission "root" sur le fichier.  
+
+**On vérife nos droits avec le user actuel et on affiche le contenu du dossier courant**  
+Nous somme un user sans privilège. Mais un fichier est de type SUID  
+![alt text](<Images/Capture d'écran 2026-01-05 215728.png>)
+
+### * `file my_file` permet de confirmer qu'il est exploitable, de comprendre le format et son linking  
+
+
+![alt text](<Images/Capture d'écran 2026-01-05 220919.png>)
+
+
+![alt text](<Images/Capture d'écran 2026-01-05 221259.png>)
