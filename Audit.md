@@ -52,3 +52,4 @@ Pour exécuter Lynis :
 * Phase 1 Devlopper un politique de sécurité  
 * Phase 2 Audit de sécurité avec Lynis  
 * Phase 3 Effectuer un pentest  
+

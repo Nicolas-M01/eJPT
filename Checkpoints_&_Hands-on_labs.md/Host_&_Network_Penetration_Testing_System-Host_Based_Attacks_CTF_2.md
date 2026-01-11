@@ -89,6 +89,19 @@ Avec metasploit c'est aussi simple...
 Renseigner RHOSTS, et SPAWN_PTY, puis lancer  
 ![alt text](<../Images/Capture d'écran 2026-01-11 181514.png>)
 
-
-
+#### Récupérer sessions
+`sessions` : permet de voir la session créée par le module et active  
+`sessions -i 2` : donnera accès à l'interpréteur de commandes.  
+![alt text](<../Images/Capture d'écran 2026-01-11 182021.png>)
 </details>
+
+
+<details>
+
+<summary><h3> :arrow_forward:** Flag 4)Les zones les plus confidentielles recèlent souvent les secrets les plus précieux. Explorez le répertoire « /root » pour trouver le flag caché sur target2.ine.local.**  
+
+#### `/root` n'est pas accessible car on pas les droits. Mais nous avons un fichir SUID.  
+![alt text](<../Images/Capture d'écran 2026-01-11 182922.png>)
+ 
+![alt text](<../Images/Capture d'écran 2026-01-11 183302.png>)
+![alt text](<../Images/Capture d'écran 2026-01-11 183711.png>)
