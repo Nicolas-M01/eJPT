@@ -47,12 +47,22 @@ Cette permission fournit à l'utilisateur le droit d'exécuter un script ou un b
 
 **On vérife nos droits avec le user actuel et on affiche le contenu du dossier courant**  
 Nous somme un user sans privilège. Mais un fichier est de type SUID  
+le répertoire utilisateur contient deux fichiers supplémentaires : « greetings » et « welcome ». Nous n'avons pas la permission d'exécuter le fichier binaire « greetings », mais nous pouvons exécuter le fichier binaire « welcome ».
 ![alt text](<Images/Capture d'écran 2026-01-05 215728.png>)
 
-### * `file my_file` permet de confirmer qu'il est exploitable, de comprendre le format et son linking  
+### * `file my_file` nous permet de confirmer qu'il s'agit de deux fichiers binaires. Nous pouvons donc utiliser ces fichiers pour élever nos privilèges.  
 
-
+Vérifions ce qui est utilisé en arrière-plan lors de l'exécution du binaire « welcome ». Pour ce faire, nous pouvons taper strings welcome.
 ![alt text](<Images/Capture d'écran 2026-01-05 220919.png>)
+Cette strings commande permet d'extraire le texte lisible par un humain intégré au fichier binaire. Cela peut nous aider à identifier des informations importantes telles que les noms de fonctions, les chaînes de caractères codées en dur ou toute autre donnée utile susceptible de faciliter une élévation de privilèges ou de révéler des détails sur le fonctionnement du binaire.  
 
 
+
+Après avoir examiné le résultat, nous avons découvert que le binaire « welcome » utilise le binaire « greetings », comme le montre l’image ci-dessus.
+
+Nous pouvons supprimer le fichier « greetings » de ce dossier et créer un nouveau fichier « greetings » contenant notre charge utile personnalisée.
+
+Notre charge utile est : cp /bin/bash greetings, qui copiera le shell Bash dans le binaire « greetings », nous permettant de l’exécuter avec des privilèges élevés.
 ![alt text](<Images/Capture d'écran 2026-01-05 221259.png>)
+
+>**Après avoir effectué ces modifications, exécutez simplement à nouveau le fichier binaire « welcome » en tapant :./welcome**  

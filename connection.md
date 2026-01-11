@@ -1,4 +1,4 @@
-http# Mysql  
+# Mysql  
 `mysql -u <user> -p<password> -h <IP_TARGET>`  
 
 
