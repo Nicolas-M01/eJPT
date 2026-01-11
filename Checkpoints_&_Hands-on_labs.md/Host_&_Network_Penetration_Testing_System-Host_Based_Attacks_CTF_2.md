@@ -21,5 +21,22 @@ Outils conseillés :
 
 <details>
 
-<summary><h3> :arrow_forward: On scanne la cible<h3></summary>  
+<summary><h3> :arrow_forward: ** Flag 1) Vérifiez le répertoire racine ('/') pour trouver un fichier qui pourrait contenir la clé du premier drapeau sur target1.ine.local.**  
+<h3></summary>  
 
+#### Ping de la cible  
+![alt text](<../Images/Capture d'écran 2026-01-11 151226.png>)  
+
+#### Scan avec nmap  
+![alt text](<../Images/Capture d'écran 2026-01-11 151653.png>) 
+
+>:bulb: Le port 80 est ouvert et un serveur "Apache 2.4.6" est ouvert.  
+
+#### Connexion au site web
+
+![alt text](<../Images/Capture d'écran 2026-01-11 151952.png>)
+>:bulb: On voit qu'il nous redirigie vers un ``script .cgi``
+> L'exploit ShellShock cible les .cgi pour obtenir un shell.
+
+
+</details>

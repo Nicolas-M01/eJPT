@@ -42,5 +42,13 @@
    Conduire des audits de suivi  
    Surveiller et adapter  
 
-   ![alt text](<Images/Capture d'écran 2025-11-29 130455.png>)
-   
+   ![alt text](<Images/Capture d'écran 2025-11-29 130455.png>)  
+
+### Audit de Sécurité avec Lynis  
+Lynis est un outil puissant et polyvalent, conçu pour auditer et renforcer la sécurité des systèmes d’exploitation basés sur Unix et Linux.  
+Pour exécuter Lynis :  
+`./lynis audit system`  
+
+* Phase 1 Devlopper un politique de sécurité  
+* Phase 2 Audit de sécurité avec Lynis  
+* Phase 3 Effectuer un pentest  
