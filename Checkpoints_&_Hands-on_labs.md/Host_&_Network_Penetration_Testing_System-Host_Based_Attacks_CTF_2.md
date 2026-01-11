@@ -98,7 +98,7 @@ Renseigner RHOSTS, et SPAWN_PTY, puis lancer
 
 <details>
 
-<summary><h3> :arrow_forward:** Flag 4)Les zones les plus confidentielles recèlent souvent les secrets les plus précieux. Explorez le répertoire « /root » pour trouver le flag caché sur target2.ine.local.**  
+<summary><h3> :arrow_forward:** Flag 4)Les zones les plus confidentielles recèlent souvent les secrets les plus précieux. Explorez le répertoire « /root » pour trouver le flag caché sur target2.ine.local.**<h3></summary>  
 
 #### `/root` n'est pas accessible car on pas les droits. Mais nous avons un fichir SUID.  
 ![alt text](<../Images/Capture d'écran 2026-01-11 182922.png>)  
