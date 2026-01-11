@@ -82,3 +82,6 @@ Et on obtient un meterpreter : `shell ` pour obtenir un shell bash, puis on réc
 
 Ce flag est facile à trouver une fois le reverse shell en place avec burp et netcat...  
 ![alt text](<../Images/Capture d'écran 2026-01-11 172542.png>)
+
+Avec metasploit c'est aussi simple... 
+
