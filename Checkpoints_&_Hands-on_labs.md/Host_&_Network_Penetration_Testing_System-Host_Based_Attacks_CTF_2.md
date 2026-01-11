@@ -69,19 +69,26 @@ Outils conseillés :
 ![alt text](<../Images/Capture d'écran 2026-01-11 174449.png>)
 Et on obtient un meterpreter : `shell ` pour obtenir un shell bash, puis on récupère le flag1 et le flag 2...  
 
-
-
 </details>
-
-
 
 <details>
 
-<summary><h3> :arrow_forward: ** Flag 2) Il se peut qu'un élément soit caché dans le répertoire racine du serveur. Explorez attentivement le répertoire « /opt/apache/htdocs/ » pour trouver le prochain paramètre sur target1.ine.local.**  
+<summary><h3> :arrow_forward: **Flag 2) Il se peut qu'un élément soit caché dans le répertoire racine du serveur. Explorez attentivement le répertoire « /opt/apache/htdocs/ » pour trouver le prochain paramètre sur target1.ine.local.**  
 <h3></summary>  
 
 Ce flag est facile à trouver une fois le reverse shell en place avec burp et netcat...  
 ![alt text](<../Images/Capture d'écran 2026-01-11 172542.png>)
 
 Avec metasploit c'est aussi simple... 
+</details>
+<details>
 
+<summary><h3> :arrow_forward:** Flag 3) Examinez le répertoire personnel de l'utilisateur et envisagez d'utiliser 'libssh_auth_bypass' pour découvrir l'indicateur sur target2.ine.local.**<h3></summary>  
+
+#### Comme indiqué dans l'indice du flag, démarrer Metasploit et lancer le module indiqué.
+Renseigner RHOSTS, et SPAWN_PTY, puis lancer  
+![alt text](<../Images/Capture d'écran 2026-01-11 181514.png>)
+
+
+
+</details>
