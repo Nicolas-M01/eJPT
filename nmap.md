@@ -11,7 +11,7 @@ Il y 65535 ports sur un ordinateurs. Les 1024 premiers sont les ports bien connu
 ``-sT`` : Connect Scan TCP  
 ``-sU`` : Scan UDP  
 `-sn` : ne scan pas, envoie des paquets ICMP pour détecter les hôtes présents.  
-`-sA` : TCP ACK Scan. Permet de vérifier si un hôte est actif et quels ports sont filtrés par un FW. Contrairement aux scans SYN (-sS) qui détectent si un port est ouvert ou fermé, le scan ACK ne dit pas si le port est ouvert ou fermé, mais s’il est filtré par un firewall ou pas.  
+`-sA` : TCP ACK Scan. Permet de vérifier si un hôte est actif et quels ports sont filtrés par un FW. Contrairement aux scans SYN (-sS) qui détectent si un port est ouvert ou fermé, le scan ACK ne dit pas si le port est ouvert ou fermé, mais s’il est filtré par un firewall ou pas. ⚠️ Important : -sA ne détecte pas l’ouverture exacte du port, il sert surtout pour la détection de firewall et de filtrage.  
 ``-O`` : Get operating System  
 ``-sV`` : Version du service.  
 `--version-intensity <0–9>` : Intensité des sondes de `sV`, valeur par défaut "7". Scan plus long et plus bruyant mais plus précis dans la version.  
@@ -24,6 +24,7 @@ Il y 65535 ports sur un ordinateurs. Les 1024 premiers sont les ports bien connu
 `-p 1000-1500` : Scan ports 1000 to 15000  
 `-p-` : Scan ***All*** ports  
 `-sC` : Exécute la collection de scripts marqués "default" dans l’écosystème NSE (Nmap Scripting Engine). Ces scripts effectuent des tâches d’énumération et de vérification courantes. Les scripts "default" fournissent des infos utiles sans être trop intrusif.  
+`--mtu` : Maximum Transmitted Unit. Les FW peuvent laisser passer des paquets lorsque la taille est plus faible. Ici on peut définir une taille max plus basse pour passer à travers.  
 `--script` : Activate a script from nmap library  
 `--script=vuln` : Activate all the scripts in the "vuln" category.  
 `ls -la /usr/share/nmap/scripts/ | grep -e "ftp"` : Liste les scripts de scan contenant le nom "ftp". Ce qui permet ensuite de lancer nmap avec un script précis.  
