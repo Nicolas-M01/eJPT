@@ -10,7 +10,8 @@ Il y 65535 ports sur un ordinateurs. Les 1024 premiers sont les ports bien connu
 ``-sS`` : SYN Scan TCP  
 ``-sT`` : Connect Scan TCP  
 ``-sU`` : Scan UDP  
-`-sn` : ne scan pas, envoie des paquets ICMP pour détecter les hôtes présents.
+`-sn` : ne scan pas, envoie des paquets ICMP pour détecter les hôtes présents.  
+`-sA` : TCP ACK Scan. Permet de vérifier si un hôte est actif et quels ports sont filtrés par un FW. Contrairement aux scans SYN (-sS) qui détectent si un port est ouvert ou fermé, le scan ACK ne dit pas si le port est ouvert ou fermé, mais s’il est filtré par un firewall ou pas.  
 ``-O`` : Get operating System  
 ``-sV`` : Version du service.  
 `--version-intensity <0–9>` : Intensité des sondes de `sV`, valeur par défaut "7". Scan plus long et plus bruyant mais plus précis dans la version.  

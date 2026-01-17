@@ -66,3 +66,5 @@ Notre charge utile est : cp /bin/bash greetings, qui copiera le shell Bash dans 
 ![alt text](<Images/Capture d'écran 2026-01-05 221259.png>)
 
 >**Après avoir effectué ces modifications, exécutez simplement à nouveau le fichier binaire « welcome » en tapant :./welcome**  
+
+
