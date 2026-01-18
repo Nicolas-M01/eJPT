@@ -24,7 +24,6 @@ Il y 65535 ports sur un ordinateurs. Les 1024 premiers sont les ports bien connu
 `-p 1000-1500` : Scan ports 1000 to 15000  
 `-p-` : Scan ***All*** ports  
 `-sC` : Exécute la collection de scripts marqués "default" dans l’écosystème NSE (Nmap Scripting Engine). Ces scripts effectuent des tâches d’énumération et de vérification courantes. Les scripts "default" fournissent des infos utiles sans être trop intrusif.  
-`--mtu` : Maximum Transmitted Unit. Les FW peuvent laisser passer des paquets lorsque la taille est plus faible. Ici on peut définir une taille max plus basse pour passer à travers.  
 `--script` : Activate a script from nmap library  
 `--script=vuln` : Activate all the scripts in the "vuln" category.  
 `ls -la /usr/share/nmap/scripts/ | grep -e "ftp"` : Liste les scripts de scan contenant le nom "ftp". Ce qui permet ensuite de lancer nmap avec un script précis.  
@@ -35,6 +34,8 @@ To run a specific script, we would use ``--script=<script-name>``
 `--data-length <nombre>` : Ajouter un certain nombre d'octets aléatoires aux paquets envoyés par nmap. Evite les détections IDS/IPS, moins reconnaissable. Utile en obfuscation. Exemple : `nmap --data-length 50 192.168.1.10` (Ajoute 50 octets aléatoires à chaque paquet envoyé.)  
 `-D <leurre1,leurre2,...,ME <IP cible>` : Envoie de leurres (Decoys). Envoie des paquets avec plusieurs adresses IP sources fausses, pour masquer l’origine réelle du scan, `ME` suivi de la vraie IP cible pour pouvoir recevoir les paquets.  
 `-g <port>` : modifier le port d'origine. Afin de tenter de contourner des règles simples de firewall/ACL  
+`--mtu` : Maximum Transmitted Unit. Les FW peuvent laisser passer des paquets lorsque la taille est plus faible. Ici on peut définir une taille max plus basse pour passer à travers.  
+
 
 
 `--host-timeout <time>` : Abandonne la cible après le temps défini.  

