@@ -10,6 +10,15 @@ Metasploit Framework est un outil de pentest (test d’intrusion) open source, u
 * Créer et tester des exploits personnalisés.
 Il est inclus par défaut dans Kali Linux.
 
+### Architecture 
+**Exploit** : Module pour prendre avantage d'une vulnérabilité (généralement fonctionne avec un payload)  
+**Payload** : Code fourni par MSF et exécuté à distance sur la cible après une exploitation réussie.  
+**Encoder** : Encode les payloads pour éviter les détections des AV.  
+**NOPS** : Utiliser pour s'assurer que la taille des payloads est correct et assurer la stabilité d'un payload lorsqu'il est exécuté.  
+**Auxiliary** : Un module utilisé pour exécuter des fonctions complémentaires comme le scan de ports et l'énumération.  
+
+
+
 ---
 
 ## ⚙️ Démarrage  
