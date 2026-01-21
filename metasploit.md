@@ -127,3 +127,8 @@ Meterpreter (interpréteur) se lance sur la cible une fois que l'on est connect�
 ## Importer scan Nmap dans MSF
 
 Après enregistrement de la sortie de la commande Nmap en format xml (-oX), nous allons importer le scan dans la console MSF.  
+Une fois Metasploit démarré, `db_import`, `hosts` permet de voir la machine ciblée et importée. `services` liste tous les ports ouverts.  
+* `db_nmap` + options : permet de lancer un nmap intégré directement à msf au workspace actuel. `vulns permet de voir les vulnérabilités`.  
+* Module Scan TCP : `auxiliary/scanner/portscan/tcp`  
+* Module Scan UDP : `auxiliary/scanner/discovery/udp_sweep`  
+  
