@@ -3,7 +3,7 @@ Dans ce scénario, un réseau a été compromis et votre objectif est d'analyser
 
 Ce laboratoire met l'accent sur l'importance de l'analyse forensique des réseaux pour identifier les indicateurs de compromission et enquêter sur les incidents afin d'assurer une réponse efficace.  
 
-**Otils :**  
+**Outils :**  
 * Wireshark  
 
 ---
@@ -20,9 +20,30 @@ Ce laboratoire met l'accent sur l'importance de l'analyse forensique des réseau
 ---
 
 <details>
-
 <summary><h3> :arrow_forward: **🏴‍☠️ Flag 1: What is the domain name(abcd.site) accessed by the infected user that returned a 200 OK response code?**<h3></summary>  
+
+>:bulb: Je filtre sur le protocole HTTP, puis je vois une requête réussie (200), je la sélectionne et je vais dans la partie HTTP pour voir le site : **`623start.site`**  
+
+![alt text](<../Images/Capture d'écran 2026-01-24 103411.png>)
+
+</details>
+
+
+<details>
+<summary><h3> :arrow_forward:🏴‍☠️ Flag 2: What is the IP address, MAC address of the infected Windows client?<h3></summary>  
+
+>:bulb: Dans les même trame on voit bien que le client est la destination, puisqu'il reçoit le code 200 sur serveur.  
+> Dans la partie couche 2 on voit donc son adresse MAC et dans la partie IP, son IP (adresse privée)  
+
+![alt text](<../Images/Capture d'écran 2026-01-24 104624.png>)
+
+</details>
+
+
+<details>
+<summary><h3> :arrow_forward:🏴‍☠️ Flag 3: Which Wireshark filter can you use to determine the victim’s hostname from NetBIOS   Name Service traffic, and what is the detected hostname for this malware infection?<h3></summary> 
 
 
 
 </details>
+
