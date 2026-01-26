@@ -118,6 +118,14 @@ ou
 exploit
 ```
 
+**`analyze`** :  
+* Identifier le type de session (Meterpreter, shell, OS, architecture, privilèges).
+* Détecter des possibilités d’escalade de privilèges (selon l’OS et la config).  
+* Suggérer des modules Metasploit pertinents à utiliser ensuite (post-exploitation).  
+* Résumer l’état de la machine compromise sans lancer chaque commande à la main  
+
+**`vulns`** :  
+Sert à lister les vulnérabilités connues pour une machine cible à partir des informations déjà collectées  
 
 
 **Meterpreter**
@@ -132,3 +140,13 @@ Une fois Metasploit démarré, `db_import`, `hosts` permet de voir la machine ci
 * Module Scan TCP : `auxiliary/scanner/portscan/tcp`  
 * Module Scan UDP : `auxiliary/scanner/discovery/udp_sweep`  
   
+
+## searchploit
+`searchsploit "Microsoft Windows SMB"` nous fournit tous les exploits en lien avec "Microsoft Windows SMB".  
+`searchsploit "Microsoft Windows SMB" | grep -e "Metasploit"` permet de filtrer les exploits utilisables dans Metapsloit.  
+
+## Plugin : Metasploit-Autopawn  
+Télécharger le plugin en suivant les instructions sur github.  
+`load db_autopwn` charge le plugin installé.  
+`db_autopwn` affiches les options.
+`db_autopwn -p -t -PI 445` exemple d'utilisation.  
