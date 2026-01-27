@@ -150,3 +150,25 @@ Télécharger le plugin en suivant les instructions sur github.
 `load db_autopwn` charge le plugin installé.  
 `db_autopwn` affiches les options.
 `db_autopwn -p -t -PI 445` exemple d'utilisation.  
+
+## Scripts Metasploit
+La liste de scripts Mtesploit se trouve dans :
+`ls -la /usr/share/metasploit-framework/scripts/resource/`  
+
+Lancer msfconsole avec un script spécifique :  
+`msfconsole -r handler.rc`  
+`resource My_path/My_script.rc`  
+
+### créer un script metasploit
+* créer et ouvrir un fichier avec extension `.rc`  
+* `use auxiliary/scanner/portscan/tcp`  
+* `set RHOSTS 10.10.10.7`  
+* `run`  
+Ce script va enchainer les commandes une fois lancé.  
+
+Il est possible de générer un script à partir des commandes lancées précédemment:  
+`makerc ~/Desktop/test.rc` : il va intégrer les commandes dans le bon ordre.  
+
+
+
+
