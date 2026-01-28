@@ -10,3 +10,15 @@ Metasploit Framework Directory à regarder pour le HTTP :
 ``auxiliary/scanner/http/http_header``  
 ``auxiliary/scanner/http/http_version``  
 ``auxiliary/scanner/http/robots_txt``  
+
+
+
+Rejetto HFS v2.3 est vulnérable aux attaques de commandes distantes.  
+
+`exploit/windows/http/rejetto-hfs_exec` permet d'exploiter rejetto et de générer un meterpreter.  
+
+
+
+
+
+
