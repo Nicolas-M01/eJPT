@@ -7,3 +7,4 @@ Le `-t 4` permet d'éviter de casser la connexion au serveur ftp et d'être bann
 `ftp IP`
 on nous demande ensuite les credentials.  
 
+#### Version V2.3.4 est vulnerable
