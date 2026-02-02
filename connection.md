@@ -42,4 +42,18 @@ Obtenir des infos sur les partages SMB.
 * `crackmapexec smb IP -u utilisateur -p motdepasse --shares` : lister les partages  
 * `crackmapexec smb IP -u utilisateur -p motdepasse -x "whoami"` Commandes distantes si admin.  
 * `crackmapexec smb 192.168.1.10 -u admin -H aad3b435b51404eeaad3b435b51404ee:5f4dcc3b5aa765d61d8327deb882cf99` Pass-the-hash (NTLM)  
-* 
+
+
+
+
+# Commandes de recherche et filtrage
+Powershell `Get-ChildItem C:\Windows\System32 -Recurse -File -Filter "*.txt"`  
+Bash `find /chemin/depart -type f -name "*.txt"`  
+CMD `dir C:\Windows\System32\*.txt /s`  
+
+
+
+
+
+
+
