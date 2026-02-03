@@ -33,10 +33,14 @@ Si l'exploit fonctionne, nous obtenons un meterpreter.
 
 
 # SAMBA
-**Brute force de credentials :**
+**Brute force de credentials :**  
 * `hydra -L Wordlist_users.txt -P Wordlist_passwords.txt smb://demo.ine.local -t 4`  
   OU avec Metasploit :  
 * Le module `auxiliary/scanner/smb/smb_login` permet de bruteforcer les credentials  
+
+### Samba V3.5.0 est vulnérable  
+`exploit/linux/samba/is_known_pipename` il permet d'obtenir un shell, mais pour avoir un meterpreter : `post/multi/manage/shell_to_meterpreter`  
+
 
 ## smbmap
 Permet de lister les partages
