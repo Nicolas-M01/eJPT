@@ -9,3 +9,7 @@ Brute force direct avec hydra
 `auxiliary/ssh/ssh_enumusers`  
 
 
+### libssh 0.8.3 est vulnerable  
+`auxiliary/scanner/ssh/libssh_auth_bypass`  
+Configurer RHOST, et dans "CMD" : "bash", run et on obtient un shell bash.  
+
