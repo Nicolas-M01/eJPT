@@ -8,3 +8,6 @@ Le `-t 4` permet d'éviter de casser la connexion au serveur ftp et d'être bann
 on nous demande ensuite les credentials.  
 
 #### Version V2.3.4 est vulnerable
+
+`exploit/unix/ftp/vsftpd_234_backdoor`  
+

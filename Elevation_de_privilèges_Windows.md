@@ -66,7 +66,7 @@ Contient une liste de méthodes utilisées pour bypasser UAC sur les Windows de 
 ### Windows Access Token
 Les tokens sont au coeur de l'authentification sur Windows. Ils sont créés et gérés par le Local Authority Subsystem Service (LSASS).  
 Les tokens permettent d'éviter se connecter chaque fois que l'on veut avoir accès à une ressource ou qu'un processus démarre.  
-Les tokens sont générés par winlogon.exe processus à chaque authentification réussie. Le token est ensuite attaché au userinit.exe, après quoi tous les processus démarré par le user héritent d'une copie de la clé d'accès de leur créateur. Ces processus tourneront avec les privilèges de cette clé d'accès.  
+Les tokens sont générés par winlogon.exe processus à chaque authentification réussie. Le token est ensuite attaché au userinit.exe, après quoi tous les processus démarrés par le user héritent d'une copie de la clé d'accès de leur créateur. Ces processus tourneront avec les privilèges de cette clé d'accès.  
 
 Les access tokens Windows ont des niveaux de sécurité. Ces niveaux déterminent jusqu’où un token peut être utilisé.  
 
@@ -115,7 +115,7 @@ Nous avons le compte *Administrator* et le compte *local service* en Delegation.
 `getuid`, `pgrep explorer`, `migrate <PID>`, `getprivs` on voit qu'on a plein de privilèges.  
 
 
-### UAC Bypass: Memory Injection  
+## UAC Bypass: Memory Injection  
 Migrer vers un prcessus x64 (explorer.exe). `getsysinfo` permet de vérifier.  
 ``shell``  
 ``net localgroup administrators``  
