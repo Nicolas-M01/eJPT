@@ -26,3 +26,5 @@ On peut ensuite se connecter en RDP normalement avec les credentials :
 `exploit/windows/http/badblue_passthru`
 `shell`, `net user administrator My_Password` permet de changer le mot de passe. Ceci sera visible dans event viewer.  
 On retourne sur le meterpreter (pas le shell) et `clearev`permet de supprimer tous les logs.  
+
+
