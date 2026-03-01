@@ -16,6 +16,12 @@ Metasploit Framework Directory à regarder pour le HTTP :
 ## Rejetto HFS v2.3 est vulnérable aux attaques de commandes distantes.  
 
 `exploit/windows/http/rejetto-hfs_exec` permet d'exploiter rejetto et de générer un meterpreter.  
+#### Avec searchsploit
+`searchsploit HTTP File server 2.3` pour trouver les exploit de HTTP 2.3.  
+`searchsploit -m 39161.py` : pour DL l'exploit.  
+* il faut l'éditer avec nano puis changer IP du fichier avec notre IP attaquante et le port (sauvegarder).  
+* Télécharger nc.exe comme demandé dans l'exploit : `cp /usr/share/windows-resources/binaries/nc.exe /root/Desktop/`, dans le même dossier (exploit+nc.exe)
+
 
 
 ## Apache Tomcat

@@ -1,0 +1,3 @@
+On peut récuprer des bannière avec nmap avec ``-sV``, `--script=banner`.  
+mais aussi avec `nc IP ssh` par exemple.  
+Ou en s'authentifiant en SSH, FTP, Telnet...  
