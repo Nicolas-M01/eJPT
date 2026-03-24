@@ -61,6 +61,9 @@ Permet de lister les partages
 `smbmap -H demo.ine.local -u admin -p password1`
 
 
+## enum4linux
+`enum4linux -u user -p password -U target_IP`  
+
 
 # SMB & NETBIOS
 

