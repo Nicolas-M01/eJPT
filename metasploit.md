@@ -144,6 +144,9 @@ Une fois Metasploit démarré, `db_import`, `hosts` permet de voir la machine ci
 ## searchploit
 `searchsploit "Microsoft Windows SMB"` nous fournit tous les exploits en lien avec "Microsoft Windows SMB".  
 `searchsploit "Microsoft Windows SMB" | grep -e "Metasploit"` permet de filtrer les exploits utilisables dans Metapsloit.  
+`searchsploit -m 49757` : Permet de télécharger le script 49757 (normalement dans /root).
+
+
 
 ## Plugin : Metasploit-Autopawn  
 Télécharger le plugin en suivant les instructions sur github.  

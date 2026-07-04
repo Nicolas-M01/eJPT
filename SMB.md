@@ -62,7 +62,7 @@ Permet de lister les partages
 
 
 ## enum4linux
-`enum4linux -u user -p password -U target_IP`  
+`enum4linux -u user -p password -U target_IP` : -U pour la userlist  
 
 
 # SMB & NETBIOS
