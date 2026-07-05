@@ -122,3 +122,7 @@ Ces deux commandes font une attaque ARP spoofing (ARP poisoning) pour se placer 
 On devient Man-In-The-Middle.  
 
 
+#### SMB Version
+Si on ne peut pas obtenir la version SMB avec un scan nmap, utiliser `scanner/auxiliary/smb/smb_version` pour l'avoir. Ensuite on pourra rechercher avec searchsploit et la version SMB. Searchsploit sort un exploit dispo avec MSF (`use exploit/multi/samba/usermap_script`). On obtient un meterpreter.
+On peut l'upgrader : mettre la session en background pour retourner sur l'exploit dans MSF, puis `sessions -u 1`, pour upgrader, ensuite le sélectionner, on obtient un accès Root.  
+
